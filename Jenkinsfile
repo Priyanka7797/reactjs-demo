@@ -10,7 +10,7 @@ pipeline {
     }
     stage('Test') {
       steps {
-        sh 'docker run my-react-app'
+        sh 'npm test'
       }
     }
     stage('Deploy') {
