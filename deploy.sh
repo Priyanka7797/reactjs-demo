@@ -18,5 +18,9 @@ then
         docker tag react:v1 priyanka7797/prod:v1
         docker image push priyanka7797/prod:v1
 
+else
+        echo "deployment is failure"
+fi        
+
         
 
