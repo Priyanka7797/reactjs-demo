@@ -4,6 +4,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
+        sh  'chmod +x build.sh'
         sh 'sh ./build.sh'
         
       }
@@ -11,6 +12,7 @@ pipeline {
     
     stage('Deploy') {
       steps {
+        sh 'chmod +x deploy.sh'
         sh 'sh ./delpoy.sh'
         }
       }
