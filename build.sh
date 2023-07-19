@@ -7,6 +7,5 @@ TAG="latest"
 # Build the Docker image
 docker build -t $IMAGE_NAME:$TAG .
 
-# Push the Docker image to the dev repository on Docker Hub
-docker push your-docker-hub-username/dev:$TAG
+
 
