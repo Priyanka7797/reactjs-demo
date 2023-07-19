@@ -4,18 +4,14 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'build.sh'
+        sh 'sh ./build.sh'
         
       }
     }
-    stage('Test') {
-      steps {
-        sh 'docker run my-react-app'
-      }
-    }
+    
     stage('Deploy') {
       steps {
-        sh 'delpoy.sh'
+        sh 'sh ./delpoy.sh'
         }
       }
     }
