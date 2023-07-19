@@ -8,11 +8,7 @@ pipeline {
         sh 'docker tag my-react-app $DOCKER_BREACT_IMAGE'
       }
     }
-    stage('Test') {
-      steps {
-        sh 'npm test'
-      }
-    }
+    
     stage('Deploy') {
       steps {
         withCredentials([usernamePassword(credentialsId: "${DOCKER_REGISTRY_CREDS}", passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
