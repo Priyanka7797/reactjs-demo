@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# Set the Docker image name and tag
-IMAGE_NAME="your-image-name"
-TAG="latest"
-
-# Pull the Docker image from the dev repository on Docker Hub
-docker pull your-docker-hub-username/dev:$TAG
-
-# Run the Docker container
-docker run -d --name your-container-name -p 80:80 $IMAGE_NAME:$TAG
+if [[ $GIT_BRANCH == origin/dev ]]
+then
+        cd react
+        chmod +x build.sh
+        ./build.sh
+        docker login --username=$docker_username --password=$docker_password
+        docker tag react:v1 priyanka7797/dev:v1
+        docker image push priyanka7797/dev:v1
+        
 
