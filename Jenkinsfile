@@ -13,7 +13,7 @@ pipeline {
     stage('Deploy') {
       steps {
         sh 'chmod +x deploy.sh'
-        sh 'sh ./delpoy.sh'
+        sh 'sh ./deploy.sh'
         }
       }
     }
